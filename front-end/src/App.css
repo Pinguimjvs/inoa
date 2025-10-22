@@ -29,9 +29,14 @@
 .stock-form {
   display: flex;
   gap: 15px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .stock-form input {

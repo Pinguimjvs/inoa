@@ -40,6 +40,11 @@ const StockChart = ({ seriesData }) => {
       text: 'Preço de Fechamento dos Ativos',
       align: 'left'
     },
+    legend: {
+        formatter: function(seriesName) {
+          return seriesName.replace('.SA', '');
+        }
+      }
     // O 'series' virá do estado
   };
 
