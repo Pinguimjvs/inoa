@@ -38,35 +38,50 @@ dotenv: Para gerenciamento das chaves de API.
 API Externa
 Alpha Vantage: Utilizada como fonte de dados para as cotações diárias dos ativos.
 
+Ah, minhas desculpas por isso. Você está absolutamente correto. Aquele trecho de "desenho" da árvore de arquivos é a parte mais sensível à formatação.
+
+Isso acontece 100% das vezes ao copiar/colar de uma página web para um editor de texto puro (como o do GitHub). Caracteres invisíveis de formatação são copiados juntos e quebram o alinhamento que faz o bloco ``` funcionar.
+
+Vamos corrigir isso. Eu reescrevi a seção da estrutura de arquivos de uma forma mais "limpa", removendo os comentários e caracteres especiais.
+
+A Solução (Copie e Cole Apenas Isto)
+Vá até o seu README.md no GitHub e clique em "Editar" (o ícone de lápis).
+
+Selecione e delete apenas a seção ## 📂 Estrutura do Projeto (o título e o bloco de código quebrado).
+
+Copie o bloco de texto abaixo (clicando no botão de copiar) e cole no lugar.
+
+(Comece a copiar daqui)
+
 📂 Estrutura do Projeto
 O projeto está organizado em uma estrutura de monorepo, contendo duas pastas principais:
 
-/desafio-inoa
+/inoa
 |
 +-- /back-end
-|   |-- .env
+|   |-- .env.example
 |   |-- .gitignore
 |   |-- package.json
-|   `-- server.js           <-- Servidor Express com a lógica da API e cache
+|   +-- server.js
 |
 +-- /front-end
 |   |-- /src
-|   |   |-- /components     <-- Componentes React reutilizáveis
-|   |   |   |-- CustomStockSelector.js
-|   |   |   |-- CustomStockSelector.css
+|   |   |-- /components
+|   |   |   |-- CustomStock
 |   |   |   |-- StockChart.js
-|   |   |   `-- StockForm.js
-|   |   |-- /services       <-- Responsável pela comunicação com a API
-|   |   |   `-- apiService.js
-|   |   |-- /utils          <-- Funções auxiliares (ex: formatar dados)
-|   |   |   `-- formatChartData.js
-|   |   |-- App.js          <-- Componente principal (gerencia estado)
+|   |   |   +-- StockForm.js
+|   |   |-- /services
+|   |   |   +-- apiService.js
+|   |   |-- /utils
+|   |   |   +-- formatChartData.js
+|   |   |-- App.js
 |   |   |-- App.css
-|   |   `-- index.js
+|   |   +-- index.js
 |   |-- .gitignore
-|   `-- package.json
+|   +-- package.json
 |
-`-- README.md               <-- Você está aqui
++-- README.md
+
 🏁 Como Executar
 Siga os passos abaixo para configurar e rodar o projeto localmente.
 
@@ -80,8 +95,6 @@ Uma chave de API gratuita da Alpha Vantage
 
 1. Configurando o Back-end
 Primeiro, inicie o servidor da API.
-
-Bash
 
 # 1. Clone o repositório
 git clone https://github.com/seu-usuario/seu-repositorio.git
@@ -99,10 +112,9 @@ cp .env
 # 5. Abra o arquivo .env e adicione sua chave da Alpha Vantage
 # O arquivo deve ficar assim:
 # ALPHA_VANTAGE_KEY=SUA_CHAVE_AQUI
+
 2. Rodando o Back-end
 Ainda na pasta /back-end, inicie o servidor:
-
-Bash
 
 # Inicia o servidor em modo de desenvolvimento (com nodemon)
 npm start
@@ -110,8 +122,6 @@ O servidor estará rodando em http://localhost:3001.
 
 3. Rodando o Front-end
 Abra um novo terminal e navegue até a pasta /front-end.
-
-Bash
 
 # 1. Navegue até a pasta do front-end
 cd front-end
